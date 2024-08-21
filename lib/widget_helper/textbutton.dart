@@ -49,7 +49,23 @@ ElevatedButton btnCorner(String msg, Function() click,
             txtColor: textColor)
     );
 
-
+Text getTxtWhiteColor(
+    {required String msg,
+      double fontSize = 14,
+      FontWeight fontWeight = FontWeight.normal,
+      int? maxLines,
+      TextAlign? textAlign,
+      TextDecoration? txtDecoration,
+      Color? decorationColor}) =>
+    Text(msg,
+        maxLines: maxLines,
+        textAlign: textAlign,
+        style: _getFontStyle(
+            txtColor: Colors.white,
+            fontSize: fontSize,
+            txtDecoration: txtDecoration,
+            decorationColor: decorationColor,
+            fontWeight: fontWeight));
 
 Text getTxtColor(
     {required String? msg,

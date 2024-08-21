@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:basics/services/notification_helper.dart';
 import 'package:basics/services/notification_service.dart';
 import 'package:basics/view/TimeView.dart';
+import 'package:basics/view/bottom_bar.dart';
 import 'package:basics/view/dummy.dart';
 
 
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Dummy(),
+      home: BottomBar(),
     );
   }
 }
