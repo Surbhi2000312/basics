@@ -5,17 +5,21 @@ class TimeModel {
   TimeModel({
       this.time, 
       this.timeFormat,
-      this.uniqueId
+      this.uniqueId,
+      this.uniqueListId
   });
 
   TimeModel.fromJson(dynamic json) {
     time = json['time'];
     timeFormat = json['timeFormat'];
     uniqueId = json['uniqueId'];
+    uniqueListId = json['uniqueId'];
+
   }
   String? time;
   String? timeFormat;
   int? uniqueId;
+  String? uniqueListId;
 
 
   Map<String, dynamic> toJson() {
@@ -23,6 +27,8 @@ class TimeModel {
     map['time'] = time;
     map['timeFormat'] = timeFormat;
     map['uniqueId'] = uniqueId;
+    map['uniqueListId'] = uniqueListId;
+
     return map;
   }
 

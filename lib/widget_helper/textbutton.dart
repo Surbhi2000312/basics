@@ -24,7 +24,7 @@ TextStyle _getFontStyle(
       Color? decorationColor}) =>
     TextStyle(
         color: txtColor,
-        fontSize: 25,
+        fontSize: fontSize,
         decoration: txtDecoration ?? TextDecoration.none,
         decorationColor: decorationColor,
         fontWeight: fontWeight ?? FontWeight.normal);

@@ -14,6 +14,14 @@ final List<String> dayList = [
   'anyday',
   'today',
 ];
+final List<String> medicineFrequency = [
+  'Once a day',
+  'Twice a day',
+  'Thrice a day',
+  'Four times a day',
+  'Five times a day',
+  'Custom',
+];
 List<String> medicineTypes = [
   'Tablet',
   'Capsule',

@@ -1,6 +1,12 @@
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:basics/crudForm/form_screen.dart';
+import 'package:basics/employee/employee_list_screen.dart';
+import 'package:basics/rest_api_crud/employee_form.dart';
+import 'package:basics/rest_api_crud/employee_screen.dart';
+import 'package:basics/employee/employee_service.dart';
+import 'package:basics/restapi_dio/dio_screen.dart';
 import 'package:basics/services/notification_helper.dart';
 import 'package:basics/services/notification_service.dart';
 import 'package:basics/view/TimeView.dart';
@@ -33,18 +39,19 @@ void main() async{
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context){
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: BottomBar(),
+      // home: BottomBar(),
+      home: DioScreen(),
     );
+
   }
 }
 

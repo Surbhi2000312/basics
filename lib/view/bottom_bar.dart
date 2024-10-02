@@ -1,7 +1,14 @@
 import 'package:basics/view/TimeView.dart';
 import 'package:basics/view/date_one.dart';
 import 'package:basics/view/dummy.dart';
+import 'package:basics/view/first_dose.dart';
+import 'package:basics/view/local_storage.dart';
+import 'package:basics/view/local_storage_two.dart';
+import 'package:basics/view/normal.dart';
 import 'package:basics/view/ram.dart';
+import 'package:basics/view/second_dose.dart';
+import 'package:basics/view/time_view_common.dart';
+import 'package:basics/view/time_view_common_second.dart';
 import 'package:basics/widget_helper/widget_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -14,10 +21,16 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
-  Dummy? dummy = Dummy();
-  DateOne? dateOne;
-  Ram? ram;
+  // Dummy? dummy = Dummy();
+  LocalStorage? localStorage = LocalStorage();
+  LocalStorageTwo? localStorageTwo;
+  FirstDose? firstDose;
+  SecondDose? secondDose;
+  Normal? normal;
+  TimeViewCommon? timeViewCommon;
+  TimeViewCommonSecond? timeViewCommonSecond;
   Timeview? timeview;
+  DateOne? dateOne;
   @override
   Widget build(BuildContext context) {
 
@@ -44,10 +57,11 @@ class _BottomBarState extends State<BottomBar> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
-                        iconPosition(Icons.home, 0),
-                        iconPosition(Icons.date_range, 1),
-                        iconPosition(Icons.schedule, 2),
-                        iconPosition(Icons.schedule_send, 3)
+                        iconPosition(Icons.one_k, 0),
+                        iconPosition(Icons.two_k, 1),
+                        iconPosition(Icons.three_k, 2),
+                        iconPosition(Icons.four_k, 3),
+                        iconPosition(Icons.five_k, 4),
                       ]))),
           body: _widgetOptions.elementAt(_selectedIndex)),
 
@@ -72,10 +86,17 @@ class _BottomBarState extends State<BottomBar> {
     });
   }
   final _widgetOptions = [
-    const Dummy(),
+    // const Dummy(),
+    const LocalStorage(),
+    const LocalStorageTwo(),
+    const FirstDose(),
+    const SecondDose(),
+    const TimeViewCommon(),
+    const TimeViewCommonSecond(),
+    const Normal(),
     const DateOne(),
-    const Ram(),
-    const Timeview()
+    const Timeview(),
+
   ];
 }
 

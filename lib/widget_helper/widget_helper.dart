@@ -50,7 +50,9 @@ InputDecoration inputFieldDecoration(
       );
 }
 Widget edtRectField(
-    {TextEditingController? control,
+    {
+      Key? key, // Add this line
+      TextEditingController? control,
           String hint = '',
           validate,
           Icon? icons,
@@ -66,8 +68,11 @@ Widget edtRectField(
           Color? filledColor,
           FloatingLabelBehavior floatingLabelBehavior = FloatingLabelBehavior.never,
           double radius = 0,
-          Function()? onTap}) {
-      return TextFormField(
+          Function()? onTap,
+          void Function(String)? onChanged, // Add this line
+           }) {
+              return TextFormField(
+          key: key, // Use the key here
           onTap: onTap,
           textCapitalization: textCapitalization,
           //TextCapitalization.words,
@@ -88,7 +93,11 @@ Widget edtRectField(
               filledColor: filledColor,
               isShowOutline: isShowOutline,
               floatingLabelBehavior: floatingLabelBehavior,
-              borderColor: borderColor));
+              borderColor: borderColor),
+  onChanged: onChanged, // Add this line
+  );
+
+
 }
 Widget getCacheImage(
     {String? url = '',
@@ -99,7 +108,8 @@ Widget getCacheImage(
       bool isShowBorderRadius = false,
       BoxFit fit = BoxFit.cover,
       String? assetPath,
-      File? filePath}) {
+      File? filePath})
+{
   Container imgWidget;
   var border = BoxDecoration(
       color: Colors.white,
@@ -150,7 +160,7 @@ Widget getPlaceHolder(
       child: Image.asset(placeAssetsHolderPos));
 }
 showCustomDialog(String message, Function isGranted,
-    {String title = "StringConst.appName",
+    {String title = "Test Case",
       String okBtn = "Yes",
       String cancelBtn = "Cancel"}) async =>
     showDialog<bool>(
@@ -211,3 +221,4 @@ Widget raisedRoundColorBtn(String txt, Color color, Function() btnClick) =>
             msg: 'Add Address', fontSize: 15, fontWeight: FontWeight.bold),
       ),
     );
+

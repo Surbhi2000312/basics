@@ -18,6 +18,7 @@ class _DummyState extends State<Dummy> {
   TextEditingController instructionsCont = TextEditingController();
   TextEditingController daysCont = TextEditingController();
   TextEditingController medicineTypeCont = TextEditingController();
+  TextEditingController listCont = TextEditingController();
 
   String selectedValue = "";
   int selectedIndex = 0;
@@ -37,6 +38,15 @@ class _DummyState extends State<Dummy> {
   List<int> list = [10, 22, 33, 42, 51];
  int sIndex=  0;
   String? sValue = "";
+
+
+  r(){
+    int a = 3;
+    int b = 3;
+
+    var x = List.generate(a, (i) => List.generate(b, (j) => j));
+    print(x);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +54,19 @@ class _DummyState extends State<Dummy> {
         child: Column(
 
           children: [
+            SizedBox(height: 120,),
+            
+            IconButton(onPressed: (){
+              r();
+            }, icon: Icon(Icons.rectangle,size: 100,)),
+
+
+
+
+
+
+
+
             SizedBox(height: 120,),
             SizedBox(
               // height: 500,
