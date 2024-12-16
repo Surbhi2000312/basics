@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:basics/crudForm/form_screen.dart';
 import 'package:basics/employee/employee_list_screen.dart';
+import 'package:basics/practice_flutter/practice_19/views/tut_1.dart';
 import 'package:basics/rest_api_crud/employee_form.dart';
 import 'package:basics/rest_api_crud/employee_screen.dart';
 import 'package:basics/employee/employee_service.dart';
@@ -49,7 +50,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: BottomBar(),
-      home: DioScreen(),
+      // home: DioScreen(),
+      home: Tut1(),
     );
 
   }
